@@ -1,0 +1,22 @@
+## Logging ###
+logging:
+  level:
+    root: ERROR
+    #core: DEBUG
+    org.springframework.web: INFO
+    com.iiht.fse4.skilltracker: INFO
+
+### Actuator ###
+management:
+  endpoint:
+    health:
+      show-details: "always"
+  info:
+    git:
+      mode: "full"
+  endpoints:
+    web:
+      ## Custom base path for Actuator
+      base-path: /actuator
+      exposure:
+        include: "health,info"

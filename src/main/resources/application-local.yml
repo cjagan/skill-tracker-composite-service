@@ -1,0 +1,25 @@
+skiill-tracker:
+  command.uri: "https://localhost:9082/"
+  query.uri: "https://localhost:9083/"
+## Logging ###
+logging:
+  level:
+    root: ERROR
+    #core: DEBUG
+    org.springframework.web: INFO
+    com.iiht.fse4.skilltracker: INFO
+
+### Actuator ###
+management:
+  endpoint:
+    health:
+      show-details: "always"
+  info:
+    git:
+      mode: "full"
+  endpoints:
+    web:
+      ## Custom base path for Actuator
+      base-path: /actuator
+      exposure:
+        include: "health,info"
