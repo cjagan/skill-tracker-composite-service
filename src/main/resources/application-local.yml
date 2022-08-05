@@ -1,13 +1,17 @@
-skiill-tracker:
-  command.uri: "https://localhost:9082/"
-  query.uri: "https://localhost:9083/"
+command:
+  uri: "http://localhost:9082/command"
+query:
+  uri: "http://localhost:9083/query"
 ## Logging ###
 logging:
   level:
     root: ERROR
     #core: DEBUG
     org.springframework.web: INFO
-    com.iiht.fse4.skilltracker: INFO
+    com.iiht.fse4.skilltracker.composite: DEBUG
+feign:
+  hystrix:
+    enabled: true
 
 ### Actuator ###
 management:

@@ -1,15 +1,21 @@
 package com.iiht.fse4.skilltracker.composite.service;
 
+import com.iiht.fse4.skilltracker.composite.client.CommandServiceClient;
+import com.iiht.fse4.skilltracker.composite.client.QueryServiceClient;
 import com.iiht.fse4.skilltracker.composite.model.*;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @Slf4j
 public class SkillTrackerServiceImpl implements SkillTrackerService {
 
+    @Autowired
+    private QueryServiceClient queryServiceClient;
+
+    @Autowired
+    private CommandServiceClient commandServiceClient;
 
     /**
      * Get all the skills
@@ -18,18 +24,18 @@ public class SkillTrackerServiceImpl implements SkillTrackerService {
      */
     @Override
     public GetSkillsResponse getSkills() {
-        return null;
+        return queryServiceClient.getSkills();
     }
 
     /**
-     * Add profile
+     * Add User profile
      *
      * @param profile @{@link Profile} object
      * @return @{@link AddProfileResponse} object
      */
     @Override
     public AddProfileResponse addProfile(Profile profile) {
-        return null;
+        return commandServiceClient.addProfile(profile);
     }
 
     /**
@@ -38,50 +44,19 @@ public class SkillTrackerServiceImpl implements SkillTrackerService {
      */
     @Override
     public UpdateProfileResponse updateProfile(Profile profile) {
-        return null;
+        return commandServiceClient.updateProfile(profile);
     }
 
     /**
-     * Get Profile based on associate Id
+     * Get Profiles by criteria
      *
-     * @param associateId associate Id
-     * @return @{@link GetProfileResponse} object
+     * @param criteria
+     * @param criteriaValue
+     * @return @{@link GetProfileResponse object}
      */
     @Override
-    public GetProfileResponse getProfiles(String associateId) {
-        return null;
+    public GetProfileResponse getProfiles(String criteria, String criteriaValue) {
+        return queryServiceClient.getProfileList(criteria, criteriaValue);
     }
-
-    /**
-     * get Profile Skill for given profile Id
-     *
-     * @param profileId Profile Id
-     * @return list of @{@link ProfileSkill} objects
-     */
-    private List<ProfileSkill> getProfileSkills(int profileId) {
-        return null;
-    }
-
-    /**
-     * Add profile skills to Profile
-     *
-     * @param profileId        Profile Id
-     * @param profileSkillList list of @{@link ProfileSkill} objects
-     */
-    private void addProfileSkills(int profileId, List<ProfileSkill> profileSkillList) {
-
-    }
-
-    /**
-     * Update Profile Skills for a given Profile.
-     *
-     * @param profileId        Profile Id
-     * @param profileSkillList List of @{@link ProfileSkill} objects.
-     */
-    private void updateProfileSkills(int profileId, List<ProfileSkill> profileSkillList) {
-
-    }
-
-
 
 }

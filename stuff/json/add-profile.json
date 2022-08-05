@@ -1,0 +1,18 @@
+{
+  "userId": 15,
+  "name": "Suresh",
+  "mobile": 9009009009,
+  "email": "jj@cc.com",
+  "profileSkillList": [
+    {
+      "profileSkillId": 1,
+      "expertiseLevel": 10,
+      "status": "Y",
+      "skill": {
+        "skillId": 2,
+        "skillName": "Angular",
+        "skillType": "Technical"
+      }
+    }
+  ]
+}

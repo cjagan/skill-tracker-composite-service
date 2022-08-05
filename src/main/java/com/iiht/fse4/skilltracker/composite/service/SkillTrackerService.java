@@ -10,6 +10,6 @@ public interface SkillTrackerService {
 
     UpdateProfileResponse updateProfile(Profile profile);
 
-    GetProfileResponse getProfiles(String associateId);
+    GetProfileResponse getProfiles(String criteria, String criteriaValue);
 
 }

@@ -10,7 +10,7 @@ import java.util.List;
 @Builder
 public class Profile {
     private int profileId;
-    private User user;
+    private int userId;
     private String associateId;
     private String name;
     private long mobile;

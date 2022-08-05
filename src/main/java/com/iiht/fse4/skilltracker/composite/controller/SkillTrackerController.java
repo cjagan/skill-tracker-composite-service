@@ -14,22 +14,24 @@ public class SkillTrackerController {
     @Autowired
     private SkillTrackerService skillTrackerService;
 
-    @PostMapping("/add-profile")
+    @PostMapping(ServiceConstants.ENGINEER_API + "/add-profile")
     public ResponseEntity<AddProfileResponse> addProfile(@RequestBody Profile profile) {
         AddProfileResponse response = skillTrackerService.addProfile(profile);
         return new ResponseEntity<>(response, response.getStatus());
     }
 
-    @PostMapping("/update-profile")
+    @PostMapping(ServiceConstants.ENGINEER_API + "/update-profile")
     public ResponseEntity<UpdateProfileResponse> updateProfile(@RequestBody Profile profile) {
         UpdateProfileResponse response = skillTrackerService.updateProfile(profile);
         return new ResponseEntity<>(response, response.getStatus());
     }
 
 
-    @RequestMapping(value = {"/get-profiles", "/get-profiles/{associateId}"}, method = RequestMethod.GET)
-    public ResponseEntity<GetProfileResponse> getProfileList(@PathVariable(required = false) String associateId) {
-        GetProfileResponse response = skillTrackerService.getProfiles(associateId);
+    @GetMapping(value = {ServiceConstants.ADMIN_API + "/{criteria}/{criteriaValue}",
+            "/get-profiles/{criteria}/{criteriaValue}"})
+    public ResponseEntity<GetProfileResponse> getProfileList(@PathVariable(required = true) String criteria,
+                                                             @PathVariable(required = true) String criteriaValue) {
+        GetProfileResponse response = skillTrackerService.getProfiles(criteria, criteriaValue);
         return new ResponseEntity<>(response, response.getStatus());
     }
 
