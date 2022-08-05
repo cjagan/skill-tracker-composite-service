@@ -35,6 +35,12 @@ public class SkillTrackerController {
         return new ResponseEntity<>(response, response.getStatus());
     }
 
+    @GetMapping(value = {ServiceConstants.ENGINEER_API + "/get-profile/{associateId}"})
+    public ResponseEntity<GetProfileResponse> getProfile(@PathVariable(required = true) String associateId) {
+        GetProfileResponse response = skillTrackerService.getProfiles(ServiceConstants.PARAM_ASSOCIATE_ID, associateId);
+        return new ResponseEntity<>(response, response.getStatus());
+    }
+
     @GetMapping("/skills")
     public ResponseEntity<GetSkillsResponse> getSkills() {
         GetSkillsResponse response = skillTrackerService.getSkills();

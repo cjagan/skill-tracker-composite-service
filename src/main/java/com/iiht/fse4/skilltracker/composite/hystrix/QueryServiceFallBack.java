@@ -18,4 +18,10 @@ public class QueryServiceFallBack implements QueryServiceClient {
         return GetProfileResponse.builder()
                 .build();
     }
+
+    @Override
+    public GetProfileResponse getProfile(String associateId) {
+        return GetProfileResponse.builder()
+                .build();
+    }
 }

@@ -7,6 +7,9 @@ public interface ServiceConstants {
     String ADMIN_API = "/admin";
     String PREFIX_CTS = "CTS";
 
+    String PARAM_ASSOCIATE_ID = "/associateId";
+
+
     String MSG_SUCCESS = "SUCCESS";
     String MSG_FAILURE = "FAILURE";
 

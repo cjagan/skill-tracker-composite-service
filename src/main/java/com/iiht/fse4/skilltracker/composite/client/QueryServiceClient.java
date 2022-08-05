@@ -20,8 +20,11 @@ public interface QueryServiceClient {
     @Headers("Content-Type: application/json")
     GetSkillsResponse getSkills();
 
-    @GetMapping("/{criteria}/{criteriaValue}")
+    @GetMapping("{criteria}/{criteriaValue}")
     @Headers("Content-Type: application/json")
     GetProfileResponse getProfileList(@PathVariable String criteria, @PathVariable String criteriaValue);
 
+    @GetMapping("{associateId}")
+    @Headers("Content-Type: application/json")
+    GetProfileResponse getProfile(@PathVariable String associateId);
 }
