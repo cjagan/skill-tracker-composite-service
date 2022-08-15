@@ -1,8 +1,7 @@
-server.port: 9081
 command:
-  uri: "http://localhost:9082/command"
+  uri: "http://ec2-18-222-29-23.us-east-2.compute.amazonaws.com:8080/command"
 query:
-  uri: "http://localhost:9083/query"
+  uri: "http://ec2-3-129-19-219.us-east-2.compute.amazonaws.com:8080/query"
 ## Logging ###
 logging:
   level:

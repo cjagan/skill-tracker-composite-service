@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 public interface QueryServiceClient {
 
-    @GetMapping("/skills")
+    @GetMapping("skills")
     @Headers("Content-Type: application/json")
     GetSkillsResponse getSkills();
 
