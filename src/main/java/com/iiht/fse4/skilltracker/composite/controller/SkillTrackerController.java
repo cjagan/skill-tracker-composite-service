@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(ServiceConstants.SKILL_TRACKER_API)
-@CrossOrigin(origins = "*")
 public class SkillTrackerController {
 
     @Autowired
