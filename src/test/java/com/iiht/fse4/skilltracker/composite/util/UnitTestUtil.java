@@ -48,7 +48,7 @@ public class UnitTestUtil {
                 .email("suresh@cts.com")
                 .profileSkillList(null)
                 //.createdDate(LocalDateTime.now())
-                .updatedDate(LocalDateTime.now())
+                //.updatedDate(LocalDateTime.now())
                 .build();
     }
 
@@ -83,7 +83,7 @@ public class UnitTestUtil {
                 .mobile(9898989898l)
                 .email("suresh@cts.com")
                 .profileSkillList(getProfileSkillList())
-                .createdDate(LocalDateTime.now())
+                //.createdDate(LocalDateTime.now())
                 .build();
     }
 
@@ -95,35 +95,29 @@ public class UnitTestUtil {
                 .mobile(9898989899l)
                 .email("harish@cts.com")
                 .profileSkillList(getProfileSkillList())
-                .createdDate(LocalDateTime.now())
+                //.createdDate(LocalDateTime.now())
                 .build();
     }
 
     private static List<ProfileSkill> getProfileSkillList() {
         List<ProfileSkill> profileSkillList = new ArrayList<>();
         ProfileSkill profileSkill = ProfileSkill.builder()
-                .profileSkillId(11)
-                .status(ServiceConstants.YES)
+                //.profileSkillId(11)
+                //.status(ServiceConstants.YES)
                 .expertiseLevel(10)
-                .skill(Skill.builder()
-                        .skillId(111)
-                        .skillName("Angular")
-                        .skillType("Technical")
-                        .createdDate(LocalDateTime.now())
-                        .build())
+                //.skillId(111)
+                .skillName("Angular")
+                .skillType("Technical")
                 .build();
         profileSkillList.add(profileSkill);
 
         ProfileSkill profileSkill1 = ProfileSkill.builder()
-                .profileSkillId(12)
-                .status(ServiceConstants.YES)
+                //.profileSkillId(12)
+                //.status(ServiceConstants.YES)
                 .expertiseLevel(10)
-                .skill(Skill.builder()
-                        .skillId(112)
-                        .skillName("SpringBoot")
-                        .skillType("Technical")
-                        .createdDate(LocalDateTime.now())
-                        .build())
+                //.skillId(112)
+                .skillName("SpringBoot")
+                .skillType("Technical")
                 .build();
         profileSkillList.add(profileSkill1);
 
@@ -134,26 +128,20 @@ public class UnitTestUtil {
     private static List<ProfileSkill> addProfileSkillList() {
         List<ProfileSkill> profileSkillList = new ArrayList<>();
         ProfileSkill profileSkill = ProfileSkill.builder()
-                .status(ServiceConstants.YES)
+                //.status(ServiceConstants.YES)
                 .expertiseLevel(10)
-                .skill(Skill.builder()
-                        .skillId(111)
-                        .skillName("Angular")
-                        .skillType("Technical")
-                        //.createdDate(LocalDateTime.now())
-                        .build())
+                //.skillId(111)
+                .skillName("Angular")
+                .skillType("Technical")
                 .build();
         profileSkillList.add(profileSkill);
 
         ProfileSkill profileSkill1 = ProfileSkill.builder()
-                .status(ServiceConstants.YES)
+                //.status(ServiceConstants.YES)
                 .expertiseLevel(10)
-                .skill(Skill.builder()
-                        .skillId(112)
-                        .skillName("SpringBoot")
-                        .skillType("Technical")
-                        //.createdDate(LocalDateTime.now())
-                        .build())
+                //.skillId(112)
+                .skillName("SpringBoot")
+                .skillType("Technical")
                 .build();
         profileSkillList.add(profileSkill1);
 
