@@ -12,4 +12,5 @@ public interface SkillTrackerService {
 
     GetProfileResponse getProfiles(String criteria, String criteriaValue);
 
+    GetProfileResponse getProfiles(Criteria criteria);
 }

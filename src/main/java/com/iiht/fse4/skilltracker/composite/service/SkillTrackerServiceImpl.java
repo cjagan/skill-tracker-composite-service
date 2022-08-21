@@ -59,4 +59,8 @@ public class SkillTrackerServiceImpl implements SkillTrackerService {
         return queryServiceClient.getProfileList(criteria, criteriaValue);
     }
 
+    @Override
+    public GetProfileResponse getProfiles(Criteria criteria) {
+        return queryServiceClient.getProfileList(criteria);
+    }
 }
